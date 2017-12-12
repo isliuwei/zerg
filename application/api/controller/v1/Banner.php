@@ -9,7 +9,7 @@
 namespace app\api\controller\v1;
 
 use think\Validate;
-use app\api\validate\TestValidate;
+use app\api\validate\IDMustBePositiveInt;
 
 class Banner
 {
@@ -23,21 +23,14 @@ class Banner
      */
     public function getBanner($id)
     {
-        //独立验证
         $data = [
-            'name' => 'liuwei',
-            'email' => 'lw.588@163.com'
+            'id' => $id
         ];
-        // $validate = new Validate([
-        //     'name' => 'require|max:10',
-        //     'email' => 'email'
-        // ]);
-
-        $validate = new TestValidate();
+        $validate = new IDMustBePositiveInt();
+        
 
         $result = $validate -> batch() -> check($data);
         $error = $validate -> getError();
-
     }
 
 }

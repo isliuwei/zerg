@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/zerg.iml" filepath="$PROJECT_DIR$/.idea/zerg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../zerg_2/.idea/zerg_2.iml" filepath="$PROJECT_DIR$/../zerg_2/.idea/zerg_2.iml" />
     </modules>
   </component>
 </project>
