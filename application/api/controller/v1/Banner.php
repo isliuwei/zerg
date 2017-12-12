@@ -21,16 +21,13 @@ class Banner
      * @id      banner的id号
      *
      */
-    public function getBanner($id)
+    public function getBanner()
     {
-        $data = [
-            'id' => $id
-        ];
-        $validate = new IDMustBePositiveInt();
-        
 
-        $result = $validate -> batch() -> check($data);
-        $error = $validate -> getError();
+        (new IDMustBePositiveInt()) -> goCheck();
+        echo 'next';
+
+
     }
 
 }
