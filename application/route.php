@@ -9,25 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-//return [
-//    '__pattern__' => [
-//        'name' => '\w+',
-//    ],
-//    '[hello]'     => [
-//        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-//        ':name' => ['index/hello', ['method' => 'post']],
-//    ],
-//
-//];
+
 
 use think\Route;
 
-/**
- * 路由定义格式
- * Route::rule('路由表达式','路由地址','请求类型','路由参数(数组)','变量规则(数组)');
- * 请求类型：GET / POST / DELETE / PUT / *
- *
- */
-Route::rule('hello/:id', 'sample/Test/hello', 'GET|POST', ['https' => false]);
-//Route::get('hello/:id', 'sample/Test/hello');
-//Route::any('hello', 'sample/Test/hello');
+
+Route::get('banner/:id', 'api/v1.Banner/getBanner');
+
