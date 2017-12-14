@@ -12,6 +12,7 @@ namespace app\lib\exception;
 use think\Exception;
 use think\exception\Handle;
 use think\Request;
+use think\Log;
 
 class ExceptionHandler extends Handle
 {
@@ -19,6 +20,16 @@ class ExceptionHandler extends Handle
     private $msg;
     private $errorCode;
     // 需要返回客户端当前请求的URL路径
+
+    private function recordErrorLog(Exception $e)
+    {
+        Log::init([
+            'type' => 'File',
+            'path' => LOG_PATH,
+            'level' => ['error']
+        ]);
+        Log::record($e -> getMessage(), 'error');
+    }
 
     public function render(Exception $e)
     {
@@ -31,10 +42,20 @@ class ExceptionHandler extends Handle
         }
         else
         {
-            // 记录日志log
-            $this -> code = 500;
-            $this -> msg = '服务器内部错误.';
-            $this -> errorCode = 999;
+            // Config::get('app_debug');
+            if (config('app_debug'))
+            {
+                return parent::render($e);
+            }
+            else
+            {
+                // 记录日志log
+                $this -> code = 500;
+                $this -> msg = '服务器内部错误.';
+                $this -> errorCode = 999;
+                $this -> recordErrorLog($e);
+            }
+
         }
         $request = Request::instance();
         $result = [
