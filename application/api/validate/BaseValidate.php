@@ -22,7 +22,7 @@ class BaseValidate extends Validate
         $request = Request::instance();
         $params = $request -> param();
 
-        $result = $this -> check($params );
+        $result = $this -> check($params);
         if (!$result)
         {
             $error = $this -> error;
@@ -32,7 +32,6 @@ class BaseValidate extends Validate
         {
             return true;
         }
-
     }
 
 }
