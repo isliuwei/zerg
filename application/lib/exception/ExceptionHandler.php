@@ -21,7 +21,7 @@ class ExceptionHandler extends Handle
     private $errorCode;
     // 需要返回客户端当前请求的URL路径
 
-    private function recordErrorLog(Exception $e)
+    private function recordErrorLog(\Exception $e)
     {
         Log::init([
             'type' => 'File',
@@ -31,7 +31,7 @@ class ExceptionHandler extends Handle
         Log::record($e -> getMessage(), 'error');
     }
 
-    public function render(Exception $e)
+    public function render(\Exception $e)
     {
         if ($e instanceof BaseException)
         {

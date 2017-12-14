@@ -38,7 +38,7 @@ class Banner
             throw new BannerMissException();
         }
 
-        return $banner;
+        return json($banner);
 
     }
 
