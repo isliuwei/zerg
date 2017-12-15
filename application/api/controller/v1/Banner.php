@@ -31,14 +31,15 @@ class Banner
         (new IDMustBePositiveInt()) -> goCheck();
 
 
-        $banner = BannerModel::getBannerByID($id);
+//        $banner = BannerModel::getBannerByID($id);
+        $banner = BannerModel::get( $id);
 
         if (!$banner)
         {
             throw new BannerMissException();
         }
 
-        return json($banner);
+        return $banner;
 
     }
 
