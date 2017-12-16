@@ -32,4 +32,22 @@ class Banner extends Model
 //            -> select();
 //        return $result;
 //    }
+    // 隐藏字段
+    protected $hidden = ['delete_time', 'update_time'];
+
+    public static function getBannerByID($id)
+    {
+        // get, find, all, select
+        $banner = self::with(['items', 'items.img'])
+            -> find($id);
+        return $banner;
+    }
+
+    public function items()
+    {
+        return $this -> hasMany('BannerItem', 'banner_id', 'id');
+    }
+
+
+
 }

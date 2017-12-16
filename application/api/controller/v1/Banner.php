@@ -27,20 +27,17 @@ class Banner
      */
     public function getBanner($id)
     {
-
         (new IDMustBePositiveInt()) -> goCheck();
 
-
-//        $banner = BannerModel::getBannerByID($id);
-        $banner = BannerModel::get( $id);
-
+        $banner = BannerModel::getBannerByID($id);
+        // 隐藏对象属性值
+        // $banner -> hidden(['delete_time', 'update_time']);
+        // 只显示对象指定的属性值
+        // $banner -> visible(['id', 'name']);
         if (!$banner)
         {
             throw new BannerMissException();
         }
-
         return $banner;
-
     }
-
 }
