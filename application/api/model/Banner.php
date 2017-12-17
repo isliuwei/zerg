@@ -13,7 +13,7 @@ use think\Exception;
 use think\Model;
 
 
-class Banner extends Model
+class Banner extends BaseModel
 {
 //    protected $table = 'category';
 //    public static function getBannerByID($id)
