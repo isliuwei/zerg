@@ -1,0 +1,1 @@
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/18 * Time: 下午6:17 */namespace app\api\controller\v1;use app\api\model\Category as CategoryModel;class Category{    public function getAllCategories()    {        return CategoryModel::getCategories();    }}

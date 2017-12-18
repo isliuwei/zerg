@@ -26,7 +26,6 @@ class Product extends BaseModel
         $products = self::limit($count)
             -> order('create_time desc')
             -> select();
-
         return $products;
     }
 
