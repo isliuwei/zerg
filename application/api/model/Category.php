@@ -25,4 +25,6 @@ class Category extends BaseModel
     {
         return $this -> belongsTo('image', 'topic_img_id', 'id');
     }
+
+    
 }

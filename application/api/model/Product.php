@@ -2,6 +2,7 @@
 
 namespace app\api\model;
 
+
 use app\lib\exception\ProductException;
 use think\Model;
 
@@ -27,6 +28,13 @@ class Product extends BaseModel
             -> order('create_time desc')
             -> select();
         return $products;
+    }
+
+    public static function getProductsByCategoryID($categoryID)
+    {
+       $products = self::where('category_id', '=', $categoryID)
+           ->select();
+       return $products;
     }
 
 }
