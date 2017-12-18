@@ -18,4 +18,10 @@ class Theme extends BaseModel
     {
         return $this -> belongsTo('image', 'head_img_id', 'id');
     }
+
+    // 处理 Theme 与 Product 多对多 关系
+    public function products()
+    {
+        return $this -> belongsToMany('Product', 'theme_product', 'product_id', 'theme_id');
+    }
 }
