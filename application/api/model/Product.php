@@ -16,7 +16,18 @@ class Product extends BaseModel
 //    {
 //        return $this -> belongsTo('image', 'img_id', 'id');
 //    }
+    // 商品和商品图片 一对多关系  hasMany
+    public function imgs()
+    {
+        return $this -> hasMany('ProductImage', 'product_id', 'id');
+    }
 
+    // 商品和商品参数 一对多关系  hasMany
+    public function properties()
+    {
+        return $this -> hasMany('ProductProperty', 'product_id', 'id');
+    }
+    
     public function getMainImgUrlAttr($value, $data)
     {
         return $this -> prefixImgUrl($value, $data);
@@ -39,7 +50,9 @@ class Product extends BaseModel
 
     public static function getProductDetail($id)
     {
-        
+        $product = self::with('imgs,imgs.imgUrl,properties')
+            -> find($id);
+        return $product;
     }
 
 }
