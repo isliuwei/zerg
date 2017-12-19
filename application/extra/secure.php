@@ -1,0 +1,1 @@
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/19 * Time: 下午4:06 */return [    'token_salt' => 'HHsTieBU377mJtKr'];

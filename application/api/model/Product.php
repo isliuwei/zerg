@@ -37,4 +37,9 @@ class Product extends BaseModel
        return $products;
     }
 
+    public static function getProductDetail($id)
+    {
+        
+    }
+
 }

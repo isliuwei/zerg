@@ -1,0 +1,1 @@
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/19 * Time: 下午4:16 */namespace app\lib\exception;class TokenException extends BaseException{    public $code = 401;    public $msg = 'Token已经过期或者无效Token';    public $errorCode = 10001;}
