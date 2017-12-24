@@ -1,0 +1,1 @@
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/24 * Time: 下午1:15 */namespace app\lib\exception;class SuccessMessage{      public $code = 201;      public $msg = 'ok';      public $errorCode = 0;}
