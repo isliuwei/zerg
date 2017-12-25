@@ -1,0 +1,1 @@
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/25 * Time: 上午11:54 */namespace app\lib\enum;// scope=16 代表App用户的权限数值// scope=32 代表CMS（管理员）用户的权限数值class ScopeEnum{   const User = 16;   const Super = 32;}

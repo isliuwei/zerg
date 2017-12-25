@@ -1,0 +1,1 @@
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/25 * Time: 下午12:49 */namespace app\api\controller\v1;use think\Controller;class Order extends Controller{    // 用户在选择商品后，向API提交包含它所选择商品的相关信息    // API在接收到信息后，需要检查订单相关商品的库存量}

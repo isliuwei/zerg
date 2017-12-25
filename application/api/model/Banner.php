@@ -25,7 +25,7 @@ class Banner extends BaseModel
 
         // 闭包方法
 //        $result = Db::table('banner_item')
-//            -> fet chSql()
+//            -> fetchSql()
 //            -> where(function($query) use($id) {
 //                $query -> where('banner_id', '=', $id);
 //            })
