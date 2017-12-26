@@ -1,1 +1,1 @@
-<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/19 * Time: 下午4:06 */return [    'token_salt' => 'HHsTieBU377mJtKr'];
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/19 * Time: 下午4:06 */return [    'token_salt' => 'HHsTieBU377mJtKr',    'pay_back_url' => 'http://lw.cn/api/v1/pay/notify'    // Ngrok反向代理 本机 => 外网服务器 + root_url /zerg/public/index.php +    // ];
