@@ -1,0 +1,1 @@
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/26 * Time: 上午8:42 */namespace app\api\model;class Order extends BaseModel{    protected $hidden = ['user_id', 'delete_time', 'update_time'];    protected $autoWriteTimestamp = true;    //protected $createTime = 'create_time_diy';}

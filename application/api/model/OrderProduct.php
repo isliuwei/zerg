@@ -1,0 +1,1 @@
+<?php/** * Created by PhpStorm. * User: liuwei * Date: 2017/12/26 * Time: 上午9:01 */namespace app\api\model;class OrderProduct extends BaseModel{}
